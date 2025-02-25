@@ -77,7 +77,7 @@ export default function PageWithJSbasedForm() {
       </Head>
       <h1 className={styles.title}>Conseguí la ubicación!</h1>
       
-      <div className={styles.homePageContent}>
+      <div className={styles.mapsAndLoteSearchContainer}>
 
       <div className="mapTypes">
         <RadioGroup
@@ -100,7 +100,11 @@ export default function PageWithJSbasedForm() {
         />
         <button type="submit">Buscar</button>
       </form>
-
+      </div>
+      
+      
+      
+      <div className={styles.poiAndFooterContainer}>
       <div className="poiContainer">
         <p className={styles.descriptionPOI}>Otros puntos de interés:</p>
         <form onSubmit={searchPOI}>
@@ -149,10 +153,11 @@ export default function PageWithJSbasedForm() {
           </button>
         </form>
       </div>
-      </div>
+      
    
       <div className="footer">
         Hecho por <a href="https://github.com/barrio-san-matias"> un grupo de vecinos de san matías - v1.3.0 </a>
+      </div>
       </div>
       <Analytics />
       <SpeedInsights />

@@ -41,18 +41,23 @@ form button {
 
 .mapTypes {
   text-align: center;
-  font-weight: bold;
-  font-size: 1.2em;
+  font-weight: 600;
+  font-size: 1.3em;
 }
 
-.poiContainer {
-  border-top: 1px
-} 
+
 
 .poiContainer form button {
   font-size: 16px;
+  font-weight: 600;
   width: 90%;
   margin-top: 20px;
+  padding: 12px 0;
+  background-color: rgb(231, 253, 240);
+  color: rgb(32, 95, 58);
+
+  border-color: seagreen;
+  border-radius: 9px;
 }
 
 .footer {
@@ -60,7 +65,7 @@ form button {
   font-size: 1.1em;
   font-weight: bolder;
   padding: 10px;
-  margin-top: 20px;
+  margin: 30px 0;
 }
 
 .hint {
