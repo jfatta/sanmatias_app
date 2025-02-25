@@ -1,5 +1,8 @@
 // components/RadioGroup.js
 
+import styles from "../styles/Home.module.css";
+
+
 const RadioGroup = ({ selectedOption, onOptionChange }) => {
   const handleOptionChange = (event) => {
     const value = event.target.value;
@@ -7,8 +10,9 @@ const RadioGroup = ({ selectedOption, onOptionChange }) => {
   };
 
   return (
-    <div>
-      opciones:
+    <div className={styles.radioGroupContainer}>
+      <div>Mapa:</div>
+      <div className={styles.radioGroupOptions}>
       <label>
         <input
           type="radio"
@@ -36,6 +40,7 @@ const RadioGroup = ({ selectedOption, onOptionChange }) => {
         />
         Apple Maps
       </label>
+      </div>
     </div>
   );
 };

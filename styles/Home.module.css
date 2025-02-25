@@ -33,6 +33,12 @@
   text-decoration: none;
 }
 
+.homePageContent{
+  display: flex;
+  flex-direction: column;
+  margin: 0 18px;
+}
+
 .disclaimer {
  text-align: center; 
 }
@@ -44,30 +50,82 @@
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 35px;
-}
-
-.title,
-.description {
+  font-weight: 600;
   text-align: center;
+  line-height: 1.15;
+  font-size: 24px;
+  background-color: seagreen;
+  color: rgb(231, 253, 240);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.description {
-  margin: 2rem 0;
-  margin-bottom: 1rem;
-  }
+.radioGroupContainer {
+  display: flex;
+  justify-content: flex-start;
+}
 
-.description #pregunta {
+.radioGroupOptions{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap:8px;
+  margin-left: 8px;
+}
+
+.radioGroupOptions label {
+  font-weight: 500;
+}
+
+.loteSearchTitle {
+  text-align: start;
+  font-weight: 600;
+  margin-top: 16px;
   line-height: 1.5;
-  font-size: 2rem;
+  font-size:x-large;
+}
+
+.searchLoteInputAndButton {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchLoteInputAndButton input {
+  width: 60%;
+  font-size: 24px;
+  background: #f9f9f9;
+  font-weight: 500;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border-color: gray;
+  border-width: 1px;
+  padding: 6px 12px;
+}
+
+.searchLoteInputAndButton button {
+  width: 40%;
+  margin-top: 0;
+  padding: 6px 18px;
+  white-space: nowrap;
+  background-color: rgb(231, 253, 240);
+  color: rgb(32, 95, 58);
+  font-weight: bold;
+  font-size: large;
+  border-width: 1px;
+  border-color: seagreen;
 }
 
 .descriptionPOI {
-    margin-top: 30px;
-    text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 30px;
+  text-align: center;
 }
+
+
 
 .code {
   background: #fafafa;
