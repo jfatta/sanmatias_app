@@ -67,15 +67,17 @@ export default function PageWithJSbasedForm() {
     <div className="container">
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <h1 className={styles.title}>sanmatias.app</h1>
+      <h1 className={styles.title}>www.sanmatias.app</h1>
+      
+      <div className={styles.mapsAndLoteSearchContainer}>
 
       <div className="mapTypes">
         <RadioGroup
@@ -84,11 +86,11 @@ export default function PageWithJSbasedForm() {
         />
       </div>
 
-      <div className={styles.description}>
-        <div id={styles.pregunta}> A qué lote vas? </div>
+      <div className={styles.loteSearchTitle}>
+        Ir a un lote:
       </div>
 
-      <form onSubmit={searchLote}>
+      <form onSubmit={searchLote} className={styles.searchLoteInputAndButton}>
         <input
           type="number"
           id="lote"
@@ -96,11 +98,15 @@ export default function PageWithJSbasedForm() {
           required
           placeholder="número"
         />
-        <button type="submit">buscar</button>
+        <button type="submit">Buscar</button>
       </form>
-
+      </div>
+      
+      
+      
+      <div className={styles.poiAndFooterContainer}>
       <div className="poiContainer">
-        <p className={styles.descriptionPOI}>otros puntos de interés:</p>
+        <p className={styles.descriptionPOI}>Otros puntos de interés:</p>
         <form onSubmit={searchPOI}>
           <button type="submit" id="poi" className="buffet">
             Restaurante y Proveeduría 🍽️ 🛒
@@ -147,9 +153,11 @@ export default function PageWithJSbasedForm() {
           </button>
         </form>
       </div>
+      
    
       <div className="footer">
-        hecho por <a href="https://github.com/barrio-san-matias"> un grupo de vecinos de san matías - v1.3.0 </a>
+        Hecho por <a href="https://github.com/barrio-san-matias"> un grupo de vecinos de san matías</a> - v1.3.0 
+      </div>
       </div>
       <Analytics />
       <SpeedInsights />

@@ -7,10 +7,10 @@ body {
 }
 
 html,body {
-   background-color:rgb(187, 187, 189);
-   font-family: 'Inter', sans-serif;
-   font-weight: 100;
-   color:#252525;
+  background-color:#f9f9f9;
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+  color:#252525;
 }
 
 
@@ -26,54 +26,49 @@ a {
 h1 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  letter-spacing: -2.07px;
 }
 
 form {
   text-align: center;
 }
 
-form input {
-  text-align: center;
-  font-size: 50px;
-  background: transparent;
-  letter-spacing: 5px;
-  width: 90%;
-  font-weight: 700;
-  border-radius: 9px;
-
-
-}
 
 form button {
-    font-size: 26px;
-    width: 90%;
-    margin-top: 10px;
+  font-size: 26px;
+  margin-top: 10px;
 }
 
 .mapTypes {
   text-align: center;
-  font-weight: bold;
-  font-size: 1.2em;
+  font-weight: 600;
+  font-size: 1.3em;
 }
 
-.poiContainer {
-  border-top: 1px
 
-} 
 
 .poiContainer form button {
-    font-size: 16px;
-    width: 90%;
-    margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 90%;
+  margin-top: 20px;
+  padding: 12px 0;
+  background-color: rgb(36, 172, 129);
+  color: white;
+  border-width: 0;
+  border-radius: 9px;
 }
 
 .footer {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: bolder;
-    padding: 10px;
-    margin-top: 20px;
+  color: white;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bolder;
+  padding: 10px;
+  margin: 30px 0;
+}
+
+.footer a {
+  text-decoration: underline;
 }
 
 .hint {
@@ -84,23 +79,21 @@ form button {
 }
 
 .footer a {
-  font-weight: bolder;
-
+  font-weight: bold;
 }
 
 
 #velmax {
-    background-color: #330a67;
-    color: #fff3f3;
-    padding: 3px;
-    margin: 40px;
-    font-weight: bolder;
-    text-shadow: 11px -4px 19px #e4bbff;
+  background-color: #330a67;
+  color: #fff3f3;
+  padding: 3px;
+  margin: 40px;
+  font-weight: bolder;
+  text-shadow: 11px -4px 19px #e4bbff;
 }
 
 #multas {
  display: block;
-
 }
 
 #autos {
@@ -112,20 +105,19 @@ form button {
 }
 
 .km {
-      border: 2px solid red;
-    border-radius: 100%;
-    /* padding: 1em; */
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background: #f1ecec;
-    font-family: sans-serif;
-    font-size: 15px;
-    line-height: 21px;
-    text-shadow: 1px red;
-    text-shadow: 1px 1px white;
-    color: #4f4d4d;
-
+  border: 2px solid red;
+  border-radius: 100%;
+  /* padding: 1em; */
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: #f1ecec;
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 21px;
+  text-shadow: 1px red;
+  text-shadow: 1px 1px white;
+  color: #4f4d4d;
 }
  
 #logo {
