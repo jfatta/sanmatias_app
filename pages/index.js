@@ -75,7 +75,7 @@ export default function PageWithJSbasedForm() {
           rel="stylesheet"
         />
       </Head>
-      <h1 className={styles.title}>Conseguí la ubicación!</h1>
+      <h1 className={styles.title}>www.sanmatias.app</h1>
       
       <div className={styles.mapsAndLoteSearchContainer}>
 
@@ -156,7 +156,7 @@ export default function PageWithJSbasedForm() {
       
    
       <div className="footer">
-        Hecho por <a href="https://github.com/barrio-san-matias"> un grupo de vecinos de san matías - v1.3.0 </a>
+        Hecho por <a href="https://github.com/barrio-san-matias"> un grupo de vecinos de san matías</a> - v1.3.0 
       </div>
       </div>
       <Analytics />
