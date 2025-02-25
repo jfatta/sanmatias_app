@@ -21,12 +21,7 @@
   align-items: center;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
+
 
 .title a {
   color: #0070f3;
@@ -128,7 +123,7 @@
   flex-direction: column;
   margin-top: 60px;
   padding: 0 28px;
-  background-color: rgb(187 187 189 / 30%);
+  background-color: rgb(68, 79, 87);
 }
 
 .descriptionPOI {

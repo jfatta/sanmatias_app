@@ -26,7 +26,6 @@ a {
 h1 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  letter-spacing: -2.07px;
 }
 
 form {
@@ -53,19 +52,23 @@ form button {
   width: 90%;
   margin-top: 20px;
   padding: 12px 0;
-  background-color: rgb(231, 253, 240);
-  color: rgb(32, 95, 58);
-
-  border-color: seagreen;
+  background-color: rgb(36, 172, 129);
+  color: rgb(245, 252, 250);
+  border-width: 0;
   border-radius: 9px;
 }
 
 .footer {
+  color: white;
   text-align: center;
   font-size: 1.1em;
   font-weight: bolder;
   padding: 10px;
   margin: 30px 0;
+}
+
+.footer a {
+  text-decoration: underline;
 }
 
 .hint {
@@ -76,7 +79,7 @@ form button {
 }
 
 .footer a {
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 
