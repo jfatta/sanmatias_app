@@ -156,7 +156,7 @@ export default function PageWithJSbasedForm() {
       
    
       <div className="footer">
-        Hecho por <a href="https://github.com/barrio-san-matias"> un grupo de vecinos de san matías</a> - v1.3.1 
+        Hecho por <a href="https://jorgefatta.dev">jorgefatta.dev</a> y <a href="https://github.com/barrio-san-matias"> vecinos de san matías</a> - v1.3.2 
       </div>
       </div>
       <Analytics />
