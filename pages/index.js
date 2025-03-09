@@ -66,6 +66,8 @@ export default function PageWithJSbasedForm() {
   return (
     <div className="container">
       <Head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7149704259512691"
+     crossorigin="anonymous"></script>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap"
           rel="stylesheet"
@@ -74,6 +76,7 @@ export default function PageWithJSbasedForm() {
           href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+
       </Head>
       <h1 className={styles.title}>www.sanmatias.app</h1>
       
