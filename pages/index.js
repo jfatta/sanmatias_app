@@ -13,6 +13,7 @@ export default function PageWithJSbasedForm() {
   const [selectedValue, setSelectedValue] = useState("google");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showSafetyOverlay, setShowSafetyOverlay] = useState(false);
+  const [overlayFading, setOverlayFading] = useState(false);
 
   // Initialize theme based on system preference
   useEffect(() => {
@@ -60,9 +61,14 @@ export default function PageWithJSbasedForm() {
       const result = await response.json();
       // Show safety overlay before redirecting
       setShowSafetyOverlay(true);
+      setOverlayFading(false);
+      setTimeout(() => {
+        setOverlayFading(true);
+      }, 2000); // Start fading after 2 seconds
       setTimeout(() => {
         setShowSafetyOverlay(false);
-      }, 2500); // Hide overlay after 2.5 seconds
+        setOverlayFading(false);
+      }, 2500); // Hide overlay completely after 2.5 seconds
       setTimeout(() => {
         window.location.replace(result.MapURL);
       }, 3000); // 3 seconds delay
@@ -86,9 +92,14 @@ export default function PageWithJSbasedForm() {
       const result = await response.json();
       // Show safety overlay before redirecting
       setShowSafetyOverlay(true);
+      setOverlayFading(false);
+      setTimeout(() => {
+        setOverlayFading(true);
+      }, 2000); // Start fading after 2 seconds
       setTimeout(() => {
         setShowSafetyOverlay(false);
-      }, 2500); // Hide overlay after 2.5 seconds
+        setOverlayFading(false);
+      }, 2500); // Hide overlay completely after 2.5 seconds
       setTimeout(() => {
         window.location.replace(result.MapURL);
       }, 3000); // 3 seconds delay
@@ -191,10 +202,9 @@ export default function PageWithJSbasedForm() {
             </form>
           </div>
         </div>      </main>
-      
-      {/* Safety Overlay */}
+        {/* Safety Overlay */}
       {showSafetyOverlay && (
-        <div className={styles.safetyOverlay}>
+        <div className={`${styles.safetyOverlay} ${overlayFading ? styles.hiding : ''}`}>
           <div className={styles.safetyMessage}>
             <div className={styles.safetyIcon}>🚗</div>
             <h2>Por favor conduzca con cuidado</h2>
