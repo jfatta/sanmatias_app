@@ -75,9 +75,11 @@ export default function PageWithJSbasedForm() {
         <title>San Matías App</title>
         <meta name="description" content="Encuentra ubicaciones en San Matías de forma rápida y sencilla" />
       </Head>
-      
-      <main className={styles.main}>
+        <main className={styles.main}>
         <h1 className={styles.title}>San Matías</h1>
+          <div className={styles.subtitle}>
+          Hecho por <a href="https://jorgefatta.dev">jorgefatta.dev</a> - v1.3.2 
+        </div>
       
         <div className={styles.mapsAndLoteSearchContainer}>
           <div className="mapTypes">
@@ -106,29 +108,24 @@ export default function PageWithJSbasedForm() {
         <div className={styles.poiAndFooterContainer}>
           <div className="poiContainer">
             <p className={styles.descriptionPOI}>Otros puntos de interés:</p>
-            <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="buffet">
-                Restaurante y Proveeduría 🍽️ 🛒
+            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="buffet">
+                Restaurante y Proveeduría
               </button>
             </form>
-            <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="sum">
-                SUM 🪩
+            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="sum">
+                SUM
               </button>
             </form>
-            <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="adm">
-                Administración 🏢
+            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="adm">
+                Administración
               </button>
             </form>
-            <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="plaza2">
-                Plaza Área 2 🛝 
+            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="plaza2">
+                Plaza Área 2
               </button>
             </form>
-            <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="plaza3">
-                Plaza Área 3 🛝 
+            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="plaza3">
+                Plaza Área 3
               </button>
             </form>
             <form onSubmit={searchPOI}>
@@ -149,12 +146,7 @@ export default function PageWithJSbasedForm() {
             <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="udp">
                 UDP Maschwitz 🏥
-              </button>
-            </form>
-          </div>
-          
-          <div className="footer">
-            Hecho por <a href="https://jorgefatta.dev">jorgefatta.dev</a> y <a href="https://github.com/barrio-san-matias"> vecinos de san matías</a> - v1.3.2 
+              </button>            </form>
           </div>
         </div>
       </main>
