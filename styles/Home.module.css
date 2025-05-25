@@ -1,22 +1,24 @@
 .container {
-  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 64px 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  padding: 24px 0;
+  border-top: 1px solid #e5e5e5;
   justify-content: center;
   align-items: center;
 }
@@ -24,124 +26,169 @@
 
 
 .title a {
-  color: #0070f3;
+  color: #171717;
   text-decoration: none;
 }
 
-
 .disclaimer {
- text-align: center; 
+  text-align: center;
+  color: #737373;
+  font-size: 14px;
 }
 
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
+  color: #525252;
 }
 
 .title {
   font-weight: 600;
   text-align: center;
-  line-height: 1.15;
-  font-size: 24px;
-  background-color: seagreen;
-  color: rgb(231, 253, 240);
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin-top: 0px;
-  margin-bottom: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+  font-size: 32px;
+  color: #000;
+  padding: 0;
+  margin: 0 0 48px 0;
+  letter-spacing: -0.025em;
 }
 
 .mapsAndLoteSearchContainer{
   display: flex;
   flex-direction: column;
-  margin: 0 28px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 .radioGroupContainer {
   display: flex;
-  justify-content: flex-start;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
 }
 
 .radioGroupOptions{
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  gap:8px;
-  margin-left: 8px;
+  gap: 12px;
 }
 
 .radioGroupOptions label {
   font-weight: 400;
+  font-size: 14px;
+  color: #171717;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.radioGroupOptions label:hover {
+  color: #525252;
+}
+
+.radioGroupOptions input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #000;
 }
 
 .loteSearchTitle {
   text-align: start;
   font-weight: 600;
-  margin-top: 16px;
-  line-height: 1.5;
-  font-size:1.3em;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  font-size: 18px;
+  color: #171717;
 }
 
 .searchLoteInputAndButton {
   display: flex;
   flex-direction: row;
+  gap: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .searchLoteInputAndButton input {
-  width: 60%;
-  font-size: 24px;
-  background: #f9f9f9;
-  font-weight: 500;
-  border-top-left-radius: 9px;
-  border-bottom-left-radius: 9px;
-  border-color: gray;
-  border-width: 1px;
-  padding: 6px 12px;
+  flex: 1;
+  font-family: 'Geist Sans', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background: #fff;
+  border: none;
+  padding: 12px 16px;
+  outline: none;
+  color: #171717;
+}
+
+.searchLoteInputAndButton input::placeholder {
+  color: #a3a3a3;
+}
+
+.searchLoteInputAndButton input:focus {
+  outline: none;
+}
+
+.searchLoteInputAndButton:focus-within {
+  border-color: #000;
+  box-shadow: 0 0 0 1px #000;
 }
 
 .searchLoteInputAndButton button {
-  width: 40%;
-  margin-top: 0;
-  padding: 6px 18px;
+  font-family: 'Geist Sans', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 24px;
   white-space: nowrap;
-  background-color: rgb(231, 253, 240);
-  color: rgb(32, 95, 58);
-  font-weight: bold;
-  font-size: large;
-  border-width: 1px;
-  border-color: seagreen;
-  border-top-right-radius: 9px;
-  border-bottom-right-radius: 9px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
+.searchLoteInputAndButton button:hover {
+  background-color: #262626;
 }
 
 .poiAndFooterContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
-  padding: 0 28px;
-  background-color: rgb(68, 79, 87);
+  margin-top: 64px;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
 }
 
 .descriptionPOI {
-  color: white;
-  font-weight: bold;
+  color: #171717;
+  font-weight: 600;
   font-size: 18px;
   text-align: start;
+  margin-bottom: 16px;
 }
 
 
 
 .code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 14px;
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', Consolas, 'Courier New', monospace;
+  color: #171717;
 }
 
 .grid {
@@ -150,36 +197,40 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  gap: 16px;
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
+  padding: 24px;
   text-align: left;
-  color: inherit;
+  color: #171717;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   max-width: 300px;
+  background-color: #fff;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  border-color: #d4d4d4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
 }
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 14px;
   line-height: 1.5;
+  color: #737373;
 }
 
 

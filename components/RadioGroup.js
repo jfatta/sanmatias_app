@@ -8,10 +8,9 @@ const RadioGroup = ({ selectedOption, onOptionChange }) => {
     const value = event.target.value;
     onOptionChange(value); // Callback to update state in the parent
   };
-
   return (
     <div className={styles.radioGroupContainer}>
-      <div>Mapa:</div>
+      <div style={{ fontWeight: 600, fontSize: '16px', color: '#171717', marginBottom: '4px' }}>Mapa:</div>
       <div className={styles.radioGroupOptions}>
       <label>
         <input
