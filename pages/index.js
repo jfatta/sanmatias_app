@@ -78,14 +78,14 @@ export default function PageWithJSbasedForm() {
       const hasSeenOverlay = localStorage.getItem('safetyOverlaySeen') === 'true';
       
       if (!hasSeenOverlay) {
-        // Show safety overlay before redirecting
+        // Show safety overlay before opening map in new tab
         setShowSafetyOverlay(true);
         setTimeout(() => {
-          window.location.replace(result.MapURL);
+          window.open(result.MapURL, '_blank', 'noopener,noreferrer');
         }, 5000); // 5 seconds delay to match auto-hide
       } else {
-        // Redirect immediately if overlay has been seen
-        window.location.replace(result.MapURL);
+        // Open map in new tab immediately if overlay has been seen
+        window.open(result.MapURL, '_blank', 'noopener,noreferrer');
       }
     }
   };  const searchPOI = async (event) => {
@@ -110,14 +110,14 @@ export default function PageWithJSbasedForm() {
       const hasSeenOverlay = localStorage.getItem('safetyOverlaySeen') === 'true';
       
       if (!hasSeenOverlay) {
-        // Show safety overlay before redirecting
+        // Show safety overlay before opening map in new tab
         setShowSafetyOverlay(true);
         setTimeout(() => {
-          window.location.replace(result.MapURL);
+          window.open(result.MapURL, '_blank', 'noopener,noreferrer');
         }, 5000); // 5 seconds delay to match auto-hide
       } else {
-        // Redirect immediately if overlay has been seen
-        window.location.replace(result.MapURL);
+        // Open map in new tab immediately if overlay has been seen
+        window.open(result.MapURL, '_blank', 'noopener,noreferrer');
       }
     }
   };
