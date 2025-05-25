@@ -12,6 +12,7 @@ export default function PageWithJSbasedForm() {
   // State to keep track of the selected value in the app
   const [selectedValue, setSelectedValue] = useState("google");
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showSafetyOverlay, setShowSafetyOverlay] = useState(false);
 
   // Initialize theme based on system preference
   useEffect(() => {
@@ -38,7 +39,6 @@ export default function PageWithJSbasedForm() {
     // Update the selected value in the app state
     setSelectedValue(value);
   };
-
   const searchLote = async (event) => {
     event.preventDefault();
     // Do something with the selected value in the app
@@ -59,10 +59,13 @@ export default function PageWithJSbasedForm() {
       window.alert(text);
     } else {
       const result = await response.json();
-      window.location.replace(result.MapURL);
+      // Show safety overlay before redirecting
+      setShowSafetyOverlay(true);
+      setTimeout(() => {
+        window.location.replace(result.MapURL);
+      }, 3000); // 3 seconds delay
     }
   };
-
   const searchPOI = async (event) => {
     event.preventDefault();
     const response = await fetch(
@@ -80,7 +83,11 @@ export default function PageWithJSbasedForm() {
       window.alert(text);
     } else {
       const result = await response.json();
-      window.location.replace(result.MapURL);
+      // Show safety overlay before redirecting
+      setShowSafetyOverlay(true);
+      setTimeout(() => {
+        window.location.replace(result.MapURL);
+      }, 3000); // 3 seconds delay
     }
   };
   return (
@@ -180,8 +187,22 @@ export default function PageWithJSbasedForm() {
               </button>
             </form>
           </div>
+        </div>      </main>
+      
+      {/* Safety Overlay */}
+      {showSafetyOverlay && (
+        <div className={styles.safetyOverlay}>
+          <div className={styles.safetyMessage}>
+            <div className={styles.safetyIcon}>🚗</div>
+            <h2>Por favor conduzca con cuidado</h2>
+            <div className={styles.loadingDots}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
-      </main>
+      )}
       
       <Analytics />
       <SpeedInsights />
