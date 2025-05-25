@@ -93,6 +93,18 @@ form button:hover {
   border-color: #d4d4d4;
 }
 
+.poiContainer form button.udp {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.poiContainer form button.udp:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
 .footer {
   color: #737373;
   text-align: center;

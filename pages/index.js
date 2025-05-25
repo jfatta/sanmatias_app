@@ -105,48 +105,55 @@ export default function PageWithJSbasedForm() {
           </form>
         </div>
         
-        <div className={styles.poiAndFooterContainer}>
-          <div className="poiContainer">
+        <div className={styles.poiAndFooterContainer}>          <div className="poiContainer">
             <p className={styles.descriptionPOI}>Otros puntos de interés:</p>
-            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="buffet">
-                Restaurante y Proveeduría
+            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="udp">
+                ❤️‍🩹 UDP Maschwitz
               </button>
-            </form>
-            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="sum">
-                SUM
-              </button>
-            </form>
-            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="adm">
-                Administración
-              </button>
-            </form>
-            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="plaza2">
-                Plaza Área 2
-              </button>
-            </form>
-            <form onSubmit={searchPOI}>              <button type="submit" id="poi" className="plaza3">
-                Plaza Área 3
+            </form>            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="sum">
+                🎂 SUM
               </button>
             </form>
             <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="plaza4">
-                Plaza Área 4 🛝 
+              <button type="submit" id="poi" className="buffet">
+                ⚽ Cancha de Fútbol
               </button>
-            </form>
-            <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="servicios">
-                Área de Servicios ♻️
+            </form>            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="buffet">
+                🍽️ Restaurante y Proveeduría
               </button>
             </form>
             <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="mailroom">
-                Mail Room 📦
+                Mail Room
               </button>
             </form>
             <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="udp">
-                UDP Maschwitz 🏥
-              </button>            </form>
+              <button type="submit" id="poi" className="plaza2">
+                Plaza Área 2
+              </button>
+            </form>
+            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="plaza3">
+                Plaza Área 3
+              </button>
+            </form>            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="plaza4">
+                Plaza Área 4
+              </button>
+            </form>
+            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="servicios">
+                Área de Servicios
+              </button>
+            </form>
+            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="adm">
+                Administración
+              </button>
+            </form>
           </div>
         </div>
       </main>
