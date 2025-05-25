@@ -13,7 +13,10 @@ export default function PageWithJSbasedForm() {
   const [selectedValue, setSelectedValue] = useState("google");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showSafetyOverlay, setShowSafetyOverlay] = useState(false);
+<<<<<<< HEAD
   const [overlayFading, setOverlayFading] = useState(false);
+=======
+>>>>>>> origin/main
 
   // Initialize theme based on system preference
   useEffect(() => {
@@ -39,7 +42,12 @@ export default function PageWithJSbasedForm() {
   const handleSelectedValueChange = (value) => {
     // Update the selected value in the app state
     setSelectedValue(value);
+<<<<<<< HEAD
   };  const searchLote = async (event) => {
+=======
+  };
+  const searchLote = async (event) => {
+>>>>>>> origin/main
     event.preventDefault();
     // Do something with the selected value in the app
     console.log("Selected value in the app:", selectedValue);
@@ -61,6 +69,7 @@ export default function PageWithJSbasedForm() {
       const result = await response.json();
       // Show safety overlay before redirecting
       setShowSafetyOverlay(true);
+<<<<<<< HEAD
       setOverlayFading(false);
       setTimeout(() => {
         setOverlayFading(true);
@@ -69,11 +78,18 @@ export default function PageWithJSbasedForm() {
         setShowSafetyOverlay(false);
         setOverlayFading(false);
       }, 2500); // Hide overlay completely after 2.5 seconds
+=======
+>>>>>>> origin/main
       setTimeout(() => {
         window.location.replace(result.MapURL);
       }, 3000); // 3 seconds delay
     }
+<<<<<<< HEAD
   };  const searchPOI = async (event) => {
+=======
+  };
+  const searchPOI = async (event) => {
+>>>>>>> origin/main
     event.preventDefault();
     const response = await fetch(
       `/api/map?poi=${event.target.poi.className}&map-type=${selectedValue}`,
@@ -92,6 +108,7 @@ export default function PageWithJSbasedForm() {
       const result = await response.json();
       // Show safety overlay before redirecting
       setShowSafetyOverlay(true);
+<<<<<<< HEAD
       setOverlayFading(false);
       setTimeout(() => {
         setOverlayFading(true);
@@ -100,6 +117,8 @@ export default function PageWithJSbasedForm() {
         setShowSafetyOverlay(false);
         setOverlayFading(false);
       }, 2500); // Hide overlay completely after 2.5 seconds
+=======
+>>>>>>> origin/main
       setTimeout(() => {
         window.location.replace(result.MapURL);
       }, 3000); // 3 seconds delay
@@ -195,13 +214,21 @@ export default function PageWithJSbasedForm() {
               <button type="submit" id="poi" className="servicios">
                 ♻️ Área de Servicios
               </button>
+<<<<<<< HEAD
             </form>            <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="gerencia">
                 👔 Gerencia
+=======
+            </form>
+            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="adm">
+                👔 Administración
+>>>>>>> origin/main
               </button>
             </form>
           </div>
         </div>      </main>
+<<<<<<< HEAD
         {/* Safety Overlay */}
       {showSafetyOverlay && (
         <div className={`${styles.safetyOverlay} ${overlayFading ? styles.hiding : ''}`}>
@@ -217,6 +244,24 @@ export default function PageWithJSbasedForm() {
         </div>
       )}
       
+=======
+      
+      {/* Safety Overlay */}
+      {showSafetyOverlay && (
+        <div className={styles.safetyOverlay}>
+          <div className={styles.safetyMessage}>
+            <div className={styles.safetyIcon}>🚗</div>
+            <h2>Por favor conduzca con cuidado</h2>
+            <div className={styles.loadingDots}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      )}
+      
+>>>>>>> origin/main
       <Analytics />
       <SpeedInsights />
     </div>
