@@ -4,13 +4,34 @@ import styles from "../styles/Home.module.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import RadioGroup from "../components/RadioGroup";
 
 export default function PageWithJSbasedForm() {
   // State to keep track of the selected value in the app
   const [selectedValue, setSelectedValue] = useState("google");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Initialize theme based on system preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setIsDarkMode(mediaQuery.matches);
+    
+    const handleChange = (e) => setIsDarkMode(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Apply theme class to document
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   // Handler function to update the selected value in the app
   const handleSelectedValueChange = (value) => {
@@ -71,14 +92,21 @@ export default function PageWithJSbasedForm() {
         <link
           href="https://api.fontshare.com/v2/css?f[]=geist-sans@400,500,600,700&display=swap"
           rel="stylesheet"
-        />
-        <title>San Matías App</title>
+        />        <title>sanmatias.app</title>
         <meta name="description" content="Encuentra ubicaciones en San Matías de forma rápida y sencilla" />
-      </Head>
-        <main className={styles.main}>
-        <h1 className={styles.title}>San Matías</h1>
-          <div className={styles.subtitle}>
-          Hecho por <a href="https://jorgefatta.dev">jorgefatta.dev</a> - v1.3.2 
+      </Head>        <main className={styles.main}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>
+            sanmatias<span className={styles.appSuffix}>.app</span>
+          </h1>          <button 
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {isDarkMode ? '☀' : '☾'}
+          </button>
+        </div>          <div className={styles.subtitle}>
+          Hecho por <a href="https://jorgefatta.dev">jorgefatta.dev</a> - v1.4.0 
         </div>
       
         <div className={styles.mapsAndLoteSearchContainer}>
@@ -124,24 +152,22 @@ export default function PageWithJSbasedForm() {
               <button type="submit" id="poi" className="buffet">
                 🍽️ Restaurante y Proveeduría
               </button>
-            </form>
-            <form onSubmit={searchPOI}>
+            </form>            <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="mailroom">
-                Mail Room
+                📦 Mail Room
               </button>
-            </form>
-            <form onSubmit={searchPOI}>
+            </form>            <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="plaza2">
-                Plaza Área 2
+                🛝 Plaza Área 2
               </button>
             </form>
             <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="plaza3">
-                Plaza Área 3
+                🛝 Plaza Área 3
               </button>
             </form>            <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="plaza4">
-                Plaza Área 4
+                🛝 Plaza Área 4
               </button>
             </form>
             <form onSubmit={searchPOI}>

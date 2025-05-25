@@ -47,15 +47,46 @@
   text-align: center;
   line-height: 1.2;
   font-size: 32px;
-  color: #000;
+  color: var(--foreground);
   padding: 0;
-  margin: 0 0 16px 0;
-  letter-spacing: -0.025em;
+}
+
+.appSuffix {
+  color: var(--muted);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.themeToggle {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background-color: var(--card);
+}
+
+.themeToggle:hover {
+  background-color: var(--muted);
+  opacity: 0.8;
 }
 
 .subtitle {
   text-align: center;
-  color: #737373;
+  color: var(--muted);
   font-size: 14px;
   font-weight: 400;
   margin: 0 0 48px 0;
@@ -63,13 +94,13 @@
 }
 
 .subtitle a {
-  color: #171717;
+  color: var(--foreground);
   text-decoration: underline;
   font-weight: 500;
 }
 
 .subtitle a:hover {
-  color: #525252;
+  color: var(--muted);
 }
 
 .mapsAndLoteSearchContainer{
@@ -86,10 +117,60 @@
   flex-direction: column;
   gap: 16px;
   margin-bottom: 32px;
-  padding: 24px;
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
+}
+
+.mapToggleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.mapToggleButtons {
+  display: flex;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px;
+  background-color: var(--card);
+}
+
+.mapToggleButton {
+  flex: 1;
+  font-family: 'Geist Sans', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 12px;
+  background-color: transparent;
+  color: var(--muted);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.mapToggleButton:hover {
+  color: var(--foreground);
+  background-color: var(--border);
+}
+
+.mapToggleButtonActive {
+  background-color: var(--foreground);
+  color: var(--background);
+  font-weight: 600;
+}
+
+.mapToggleButtonActive:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.radioGroupTitle {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--foreground);
+  margin-bottom: 4px;
 }
 
 .radioGroupOptions{
@@ -101,7 +182,7 @@
 .radioGroupOptions label {
   font-weight: 400;
   font-size: 14px;
-  color: #171717;
+  color: var(--foreground);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -110,13 +191,13 @@
 }
 
 .radioGroupOptions label:hover {
-  color: #525252;
+  color: var(--muted);
 }
 
 .radioGroupOptions input[type="radio"] {
   width: 16px;
   height: 16px;
-  accent-color: #000;
+  accent-color: var(--foreground);
 }
 
 .loteSearchTitle {
@@ -125,14 +206,14 @@
   margin-bottom: 16px;
   line-height: 1.4;
   font-size: 18px;
-  color: #171717;
+  color: var(--foreground);
 }
 
 .searchLoteInputAndButton {
   display: flex;
   flex-direction: row;
   gap: 0;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -142,15 +223,15 @@
   font-family: 'Geist Sans', 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  background: #fff;
+  background: var(--card);
   border: none;
   padding: 12px 16px;
   outline: none;
-  color: #171717;
+  color: var(--foreground);
 }
 
 .searchLoteInputAndButton input::placeholder {
-  color: #a3a3a3;
+  color: var(--muted);
 }
 
 .searchLoteInputAndButton input:focus {
@@ -158,8 +239,8 @@
 }
 
 .searchLoteInputAndButton:focus-within {
-  border-color: #000;
-  box-shadow: 0 0 0 1px #000;
+  border-color: var(--foreground);
+  box-shadow: 0 0 0 1px var(--foreground);
 }
 
 .searchLoteInputAndButton button {
@@ -168,15 +249,15 @@
   font-weight: 500;
   padding: 12px 24px;
   white-space: nowrap;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .searchLoteInputAndButton button:hover {
-  background-color: #262626;
+  background-color: var(--button-hover);
 }
 
 .poiAndFooterContainer {
@@ -191,7 +272,7 @@
 }
 
 .descriptionPOI {
-  color: #171717;
+  color: var(--foreground);
   font-weight: 600;
   font-size: 18px;
   text-align: start;
@@ -201,13 +282,13 @@
 
 
 .code {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 16px;
   font-size: 14px;
   font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', Consolas, 'Courier New', monospace;
-  color: #171717;
+  color: var(--foreground);
 }
 
 .grid {
@@ -252,13 +333,59 @@
   color: #737373;
 }
 
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .searchLoteInputAndButton button {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  .header {
+    gap: 12px;
+  }
+  
+  .themeToggle {
+    padding: 6px;
+    font-size: 14px;
+  }
+  
+  .mapToggleButton {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
 
-
-
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
+@media (max-width: 480px) {
+  .searchLoteInputAndButton {
     flex-direction: column;
+  }
+  
+  .searchLoteInputAndButton input {
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .searchLoteInputAndButton button {
+    border-radius: 0 0 6px 6px;
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .header {
+    gap: 8px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .mapToggleButtons {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .mapToggleButton {
+    padding: 8px;
+    font-size: 12px;
   }
 }
