@@ -29,6 +29,16 @@ export default function PageWithJSbasedForm() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
+  // Auto-hide overlay after 5 seconds when it's shown
+  useEffect(() => {
+    if (showSafetyOverlay) {
+      const hideTimer = setTimeout(() => {
+        setShowSafetyOverlay(false);
+      }, 5000);
+
+      return () => clearTimeout(hideTimer);
+    }
+  }, [showSafetyOverlay]);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -38,8 +48,7 @@ export default function PageWithJSbasedForm() {
   const handleSelectedValueChange = (value) => {
     // Update the selected value in the app state
     setSelectedValue(value);
-  };
-  const searchLote = async (event) => {
+  };  const searchLote = async (event) => {
     event.preventDefault();
     // Do something with the selected value in the app
     console.log("Selected value in the app:", selectedValue);
@@ -59,14 +68,14 @@ export default function PageWithJSbasedForm() {
       window.alert(text);
     } else {
       const result = await response.json();
-      // Show safety overlay before redirecting
+      
+      // Always show safety overlay before redirecting to map
       setShowSafetyOverlay(true);
       setTimeout(() => {
-        window.location.replace(result.MapURL);
-      }, 3000); // 3 seconds delay
+        window.location.href = result.MapURL;
+      }, 5000); // 5 seconds delay to match auto-hide
     }
-  };
-  const searchPOI = async (event) => {
+  };  const searchPOI = async (event) => {
     event.preventDefault();
     const response = await fetch(
       `/api/map?poi=${event.target.poi.className}&map-type=${selectedValue}`,
@@ -83,11 +92,12 @@ export default function PageWithJSbasedForm() {
       window.alert(text);
     } else {
       const result = await response.json();
-      // Show safety overlay before redirecting
+      
+      // Always show safety overlay before redirecting to map
       setShowSafetyOverlay(true);
       setTimeout(() => {
-        window.location.replace(result.MapURL);
-      }, 3000); // 3 seconds delay
+        window.location.href = result.MapURL;
+      }, 5000); // 5 seconds delay to match auto-hide
     }
   };
   return (
@@ -180,10 +190,9 @@ export default function PageWithJSbasedForm() {
               <button type="submit" id="poi" className="servicios">
                 ♻️ Área de Servicios
               </button>
-            </form>
-            <form onSubmit={searchPOI}>
+            </form>            <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="adm">
-                👔 Administración
+                👔 Gerencia
               </button>
             </form>
           </div>
