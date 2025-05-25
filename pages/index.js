@@ -38,8 +38,7 @@ export default function PageWithJSbasedForm() {
   const handleSelectedValueChange = (value) => {
     // Update the selected value in the app state
     setSelectedValue(value);
-  };
-  const searchLote = async (event) => {
+  };  const searchLote = async (event) => {
     event.preventDefault();
     // Do something with the selected value in the app
     console.log("Selected value in the app:", selectedValue);
@@ -62,11 +61,13 @@ export default function PageWithJSbasedForm() {
       // Show safety overlay before redirecting
       setShowSafetyOverlay(true);
       setTimeout(() => {
+        setShowSafetyOverlay(false);
+      }, 2500); // Hide overlay after 2.5 seconds
+      setTimeout(() => {
         window.location.replace(result.MapURL);
       }, 3000); // 3 seconds delay
     }
-  };
-  const searchPOI = async (event) => {
+  };  const searchPOI = async (event) => {
     event.preventDefault();
     const response = await fetch(
       `/api/map?poi=${event.target.poi.className}&map-type=${selectedValue}`,
@@ -85,6 +86,9 @@ export default function PageWithJSbasedForm() {
       const result = await response.json();
       // Show safety overlay before redirecting
       setShowSafetyOverlay(true);
+      setTimeout(() => {
+        setShowSafetyOverlay(false);
+      }, 2500); // Hide overlay after 2.5 seconds
       setTimeout(() => {
         window.location.replace(result.MapURL);
       }, 3000); // 3 seconds delay
@@ -180,10 +184,9 @@ export default function PageWithJSbasedForm() {
               <button type="submit" id="poi" className="servicios">
                 ♻️ Área de Servicios
               </button>
-            </form>
-            <form onSubmit={searchPOI}>
-              <button type="submit" id="poi" className="adm">
-                👔 Administración
+            </form>            <form onSubmit={searchPOI}>
+              <button type="submit" id="poi" className="gerencia">
+                👔 Gerencia
               </button>
             </form>
           </div>
