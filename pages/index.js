@@ -169,15 +169,14 @@ export default function PageWithJSbasedForm() {
               <button type="submit" id="poi" className="plaza4">
                 🛝 Plaza Área 4
               </button>
-            </form>
-            <form onSubmit={searchPOI}>
+            </form>            <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="servicios">
-                Área de Servicios
+                ♻️ Área de Servicios
               </button>
             </form>
             <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="adm">
-                Administración
+                👔 Administración
               </button>
             </form>
           </div>
