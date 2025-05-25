@@ -29,17 +29,12 @@ export default function PageWithJSbasedForm() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
-
-  // Auto-hide overlay and set localStorage when it's shown
+  // Auto-hide overlay after 5 seconds when it's shown
   useEffect(() => {
     if (showSafetyOverlay) {
-      // Auto-hide the overlay after 5 seconds
       const hideTimer = setTimeout(() => {
         setShowSafetyOverlay(false);
       }, 5000);
-
-      // Mark as seen in localStorage after showing
-      localStorage.setItem('safetyOverlaySeen', 'true');
 
       return () => clearTimeout(hideTimer);
     }
@@ -74,19 +69,11 @@ export default function PageWithJSbasedForm() {
     } else {
       const result = await response.json();
       
-      // Check if overlay has been seen before
-      const hasSeenOverlay = localStorage.getItem('safetyOverlaySeen') === 'true';
-      
-      if (!hasSeenOverlay) {
-        // Show safety overlay before opening map in new tab
-        setShowSafetyOverlay(true);
-        setTimeout(() => {
-          window.open(result.MapURL, '_blank', 'noopener,noreferrer');
-        }, 5000); // 5 seconds delay to match auto-hide
-      } else {
-        // Open map in new tab immediately if overlay has been seen
+      // Always show safety overlay before opening map in new tab
+      setShowSafetyOverlay(true);
+      setTimeout(() => {
         window.open(result.MapURL, '_blank', 'noopener,noreferrer');
-      }
+      }, 5000); // 5 seconds delay to match auto-hide
     }
   };  const searchPOI = async (event) => {
     event.preventDefault();
@@ -106,19 +93,11 @@ export default function PageWithJSbasedForm() {
     } else {
       const result = await response.json();
       
-      // Check if overlay has been seen before
-      const hasSeenOverlay = localStorage.getItem('safetyOverlaySeen') === 'true';
-      
-      if (!hasSeenOverlay) {
-        // Show safety overlay before opening map in new tab
-        setShowSafetyOverlay(true);
-        setTimeout(() => {
-          window.open(result.MapURL, '_blank', 'noopener,noreferrer');
-        }, 5000); // 5 seconds delay to match auto-hide
-      } else {
-        // Open map in new tab immediately if overlay has been seen
+      // Always show safety overlay before opening map in new tab
+      setShowSafetyOverlay(true);
+      setTimeout(() => {
         window.open(result.MapURL, '_blank', 'noopener,noreferrer');
-      }
+      }, 5000); // 5 seconds delay to match auto-hide
     }
   };
   return (
