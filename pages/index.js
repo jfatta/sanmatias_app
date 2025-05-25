@@ -69,10 +69,10 @@ export default function PageWithJSbasedForm() {
     } else {
       const result = await response.json();
       
-      // Always show safety overlay before opening map in new tab
+      // Always show safety overlay before redirecting to map
       setShowSafetyOverlay(true);
       setTimeout(() => {
-        window.open(result.MapURL, '_blank', 'noopener,noreferrer');
+        window.location.href = result.MapURL;
       }, 5000); // 5 seconds delay to match auto-hide
     }
   };  const searchPOI = async (event) => {
@@ -93,10 +93,10 @@ export default function PageWithJSbasedForm() {
     } else {
       const result = await response.json();
       
-      // Always show safety overlay before opening map in new tab
+      // Always show safety overlay before redirecting to map
       setShowSafetyOverlay(true);
       setTimeout(() => {
-        window.open(result.MapURL, '_blank', 'noopener,noreferrer');
+        window.location.href = result.MapURL;
       }, 5000); // 5 seconds delay to match auto-hide
     }
   };
