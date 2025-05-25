@@ -349,34 +349,6 @@
   animation: fadeIn 0.3s ease-out;
 }
 
-.safetyOverlay::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, white 0%, white 85%, #dc2626 85%, #dc2626 100%);
-  border-radius: 50%;
-  opacity: 0.15;
-  z-index: 1;
-}
-
-.safetyOverlay::after {
-  content: '30';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.12);
-  font-family: 'Arial Black', sans-serif;
-  z-index: 1;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
 .safetyMessage {
   text-align: center;
   color: white;
