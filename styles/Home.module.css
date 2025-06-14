@@ -103,6 +103,26 @@
   color: var(--muted);
 }
 
+.authorCredit {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 0 48px 0;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.authorCredit a {
+  color: var(--foreground);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.authorCredit a:hover {
+  color: var(--muted);
+}
+
 .mapsAndLoteSearchContainer{
   display: flex;
   flex-direction: column;
