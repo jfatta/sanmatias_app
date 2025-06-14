@@ -101,7 +101,83 @@ export default function PageWithJSbasedForm() {
     }
   };
   return (
-    <div className={styles.container}>      <Head>
+    <div className={styles.container}>      <Head>        <title>San Matías Escobar - Mapa del Barrio Cerrado | Lotes y Ubicaciones</title>
+        <meta name="description" content="Mapa interactivo del Barrio Cerrado San Matías en Escobar, Buenos Aires. Herramienta desarrollada por vecinos para encontrar lotes y ubicaciones fácilmente." />
+        <meta name="keywords" content="San Matías, Escobar, Buenos Aires, barrio cerrado, mapa, lotes, ubicaciones, argentina, san matias escobar, mapa barrio san matias, lotes san matias, barrio cerrado escobar, como llegar san matias" />
+        <meta name="author" content="Jorge Fatta - jorgefatta.dev" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sanmatias.app/" />        <meta property="og:title" content="San Matías Escobar - Mapa del Barrio Cerrado" />
+        <meta property="og:description" content="Mapa interactivo del Barrio Cerrado San Matías en Escobar, Buenos Aires. Herramienta desarrollada por vecinos." />
+        <meta property="og:image" content="https://sanmatias.app/logosm.png" />
+        <meta property="og:locale" content="es_AR" />
+        <meta property="og:site_name" content="San Matías App" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://sanmatias.app/" />        <meta property="twitter:title" content="San Matías Escobar - Mapa del Barrio Cerrado" />
+        <meta property="twitter:description" content="Mapa interactivo del Barrio Cerrado San Matías en Escobar, Buenos Aires. Herramienta desarrollada por vecinos." />
+        <meta property="twitter:image" content="https://sanmatias.app/logosm.png" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://sanmatias.app/" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logosm.png" />
+          {/* Geographic targeting - más específico */}
+        <meta name="geo.region" content="AR-B" />
+        <meta name="geo.placename" content="Escobar, Buenos Aires, Argentina" />
+        <meta name="geo.position" content="-34.3533;-58.7958" />
+        <meta name="ICBM" content="-34.3533, -58.7958" />
+        
+        {/* Información adicional para búsquedas locales */}
+        <meta name="locality" content="Escobar" />
+        <meta name="region" content="Buenos Aires" />
+        <meta name="country" content="Argentina" />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",              "name": "San Matías App",
+              "alternateName": "Barrio Cerrado San Matías",
+              "url": "https://sanmatias.app",
+              "description": "Mapa interactivo del Barrio Cerrado San Matías en Escobar, Buenos Aires. Herramienta desarrollada por vecinos para encontrar lotes y ubicaciones.",
+              "publisher": {
+                "@type": "Person",
+                "name": "Jorge Fatta",
+                "url": "https://jorgefatta.dev"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://sanmatias.app/?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+              },
+              "about": {
+                "@type": "Place",
+                "name": "Barrio Cerrado San Matías",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Escobar",
+                  "addressRegion": "Buenos Aires",
+                  "addressCountry": "Argentina"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "-34.3533",
+                  "longitude": "-58.7958"
+                }
+              }
+            })
+          }}
+        />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
@@ -109,21 +185,27 @@ export default function PageWithJSbasedForm() {
         <link
           href="https://api.fontshare.com/v2/css?f[]=geist-sans@400,500,600,700&display=swap"
           rel="stylesheet"
-        />        <title>sanmatias.app</title>
-        <meta name="description" content="Encuentra ubicaciones en San Matías de forma rápida y sencilla" />
+        />
       </Head>        <main className={styles.main}>
         <div className={styles.header}>
           <h1 className={styles.title}>
-            sanmatias<span className={styles.appSuffix}>.app</span>
-          </h1>          <button 
+            San Matías<span className={styles.appSuffix}>.app</span>
+          </h1>
+          <h2 className={styles.subtitle}>Barrio Cerrado en Escobar, Buenos Aires</h2>
+          
+          <button 
             className={styles.themeToggle}
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
             {isDarkMode ? '☀' : '☾'}
           </button>
-        </div>          <div className={styles.subtitle}>
-          Hecho por <a href="https://jorgefatta.dev">jorgefatta.dev</a> - v1.4.0 
+        </div>        <div className={styles.description}>          <p>Encuentra ubicaciones y lotes en el Barrio Cerrado San Matías de forma rápida y sencilla. 
+          Herramienta desarrollada por vecinos para vecinos en Escobar, Provincia de Buenos Aires, Argentina.</p>
+        </div>
+          
+        <div className={styles.subtitle}>
+          Desarrollado por <a href="https://jorgefatta.dev">Jorge Fatta</a> - v1.4.0 
         </div>
       
         <div className={styles.mapsAndLoteSearchContainer}>
@@ -151,7 +233,7 @@ export default function PageWithJSbasedForm() {
         </div>
         
         <div className={styles.poiAndFooterContainer}>          <div className="poiContainer">
-            <p className={styles.descriptionPOI}>Otros puntos de interés:</p>
+            <p className={styles.descriptionPOI}>Puntos de interés en San Matías:</p>
             <form onSubmit={searchPOI}>
               <button type="submit" id="poi" className="udp">
                 ❤️‍🩹 UDP Maschwitz
