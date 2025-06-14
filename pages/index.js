@@ -109,8 +109,54 @@ export default function PageWithJSbasedForm() {
         <link
           href="https://api.fontshare.com/v2/css?f[]=geist-sans@400,500,600,700&display=swap"
           rel="stylesheet"
-        />        <title>sanmatias.app</title>
-        <meta name="description" content="Encuentra ubicaciones en San Matías de forma rápida y sencilla" />
+        />        <title>Mapa de San Matías - Maschwitz, Escobar, Argentina</title>
+        <meta name="description" content="Mapa interactivo de San Matías en Maschwitz, Escobar. Encuentra lotes, ubicaciones y puntos de interés de forma rápida y sencilla." />
+        <meta name="keywords" content="mapa san matias, san matias maschwitz, escobar, mapa interactivo, lotes, argentina, zona norte, buenos aires" />
+        <meta name="geo.region" content="AR-B" />
+        <meta name="geo.placename" content="San Matías, Maschwitz, Escobar, Buenos Aires, Argentina" />
+        <meta name="geo.position" content="-34.3607673943;-58.750968761" />
+        <meta name="ICBM" content="-34.3607673943, -58.750968761" />
+        <meta property="og:title" content="Mapa de San Matías - Maschwitz, Escobar" />
+        <meta property="og:description" content="Mapa interactivo de San Matías en Maschwitz, Escobar. Encuentra lotes y ubicaciones de forma sencilla." />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_AR" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Mapa de San Matías - Argentina" />
+        <meta name="twitter:description" content="Mapa interactivo de San Matías en Maschwitz, Escobar, Argentina." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Mapa de San Matías",
+              "description": "Mapa interactivo de San Matías en Maschwitz, Escobar. Encuentra lotes, ubicaciones y puntos de interés de forma rápida y sencilla.",
+              "url": "https://sanmatias.app",
+              "applicationCategory": "MapApplication",
+              "operatingSystem": "Web",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -34.3607673943,
+                "longitude": -58.750968761
+              },
+              "areaServed": {
+                "@type": "Place",
+                "name": "San Matías, Maschwitz, Escobar, Buenos Aires, Argentina",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Maschwitz",
+                  "addressRegion": "Buenos Aires",
+                  "addressCountry": "AR"
+                }
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "ARS"
+              }
+            })
+          }}
+        />
       </Head>        <main className={styles.main}>
         <div className={styles.header}>
           <h1 className={styles.title}>
@@ -123,6 +169,9 @@ export default function PageWithJSbasedForm() {
             {isDarkMode ? '☀' : '☾'}
           </button>
         </div>          <div className={styles.subtitle}>
+          Mapa interactivo de San Matías, Maschwitz, Escobar - Buenos Aires, Argentina
+        </div>
+        <div className={styles.authorCredit}>
           Hecho por <a href="https://jorgefatta.dev">jorgefatta.dev</a> - v1.4.0 
         </div>
       
