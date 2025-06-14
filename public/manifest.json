@@ -1,0 +1,28 @@
+{
+  "name": "San Matías App - Barrio Cerrado Escobar",
+  "short_name": "San Matías",
+  "description": "Mapa interactivo del Barrio Cerrado San Matías en Escobar, Buenos Aires",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0070f3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logosm.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logosm.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["navigation", "utilities"],
+  "lang": "es-AR",
+  "scope": "/",
+  "keywords": ["san matias", "escobar", "barrio cerrado", "mapa", "argentina"]
+}

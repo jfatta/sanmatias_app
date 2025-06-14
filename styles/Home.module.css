@@ -512,3 +512,41 @@
     margin-bottom: 24px;
   }
 }
+
+.description {
+  text-align: center;
+  margin: 24px 0;
+  max-width: 600px;
+}
+
+.description p {
+  color: var(--foreground);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.infoLink {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #0070f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.infoLink:hover {
+  background: #0051cc;
+  transform: translateY(-1px);
+}
+
+.infoLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
